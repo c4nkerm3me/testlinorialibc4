@@ -2641,7 +2641,7 @@ do
                 local Elem = Dependency[1];
                 local Value = Dependency[2];
 
-                if (typeof(Elem) ~= "string" and typeof(Elem) ~= "boolean") and Elem.Value ~= Value or Elem ~= Value then
+                if Elem.Type == "Toggle" and Elem.Value ~= Value then
                     Holder.Visible = false;
                     Depbox:Resize();
                     return;
